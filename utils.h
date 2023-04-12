@@ -15,7 +15,7 @@
 // The default parameters
 struct gpt_params {
     int32_t seed      = -1; // RNG seed
-    int32_t n_threads = std::min(4, (int32_t) std::thread::hardware_concurrency());
+    int32_t n_threads = std::min(2, (int32_t) std::thread::hardware_concurrency());
     int32_t n_predict = 128; // new tokens to predict
     int32_t repeat_last_n = 64;  // last n tokens to penalize
     int32_t n_ctx = 2048; //context size
@@ -28,7 +28,7 @@ struct gpt_params {
 
     int32_t n_batch = 8; // batch size for prompt processing
 
-    std::string model = "ggml-alpaca-7b-q4.bin"; // model path
+    std::string model = "models/0-q4.bin"; // model path
     std::string prompt;
 
     bool use_color = true; // use color to distinguish generations and inputs
